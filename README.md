@@ -21,4 +21,10 @@ pip install -r requirements.txt
 python main.py
 ```
 
+## Code Hygeine
+To add all the new libraries used to requirements.txt, run the following command
+```bash
+pip freeze > requirements.txt
+```
+**Note:** Make sure to have your `virtualenv` running when you run the above command
 
