@@ -14,7 +14,7 @@ hist = symbolData.history(period="max", interval="1d")
 
 # RSI
 data_rsi = hist['Close']
-result_rsi = ta.rsi(data_rsi, 14)
+result_rsi = ta.rsi(data_rsi,14)
 
 # MACD
 slowEMA = 26
@@ -36,6 +36,33 @@ for i in range (0,len(hist_high)):
     data_stoch.append(temp)
 
 result_stoch = ta.stoch(data_stoch,length,smoothd,smoothk)
+
+print('sizes of hist:{}, rsi:{}, macd:{}, stoch:{}'
+.format(len(hist_high),len(result_rsi),len(result_macd),len(result_stoch)))
+
+print('rsi: {}'.format(result_stoch[5592][0]))
+
+lengthRsi = len(result_rsi)
+lengthMacd = len(result_macd)
+lengthStoch = len(result_stoch)
+lengthHist = len(hist)
+
+startIndex = 30
+customHist = hist[startIndex:len(hist)]
+
+temp_stoch = []
+for i in range(0,lengthStoch):
+    temp_stoch.append(result_stoch[i][0])
+
+customHist['rsi'] = result_rsi[startIndex - (lengthHist-lengthRsi):lengthRsi]
+customHist['macd'] = result_macd[startIndex - (lengthHist-lengthMacd):lengthMacd]
+customHist['stoch'] = temp_stoch[startIndex - (lengthHist-lengthStoch):lengthStoch]
+
+
+
+
+
+
 
 
 
