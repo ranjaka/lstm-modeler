@@ -24,6 +24,8 @@ import mplcursors
 # Read from CSV
 raw_data = pd.read_csv('data/APT Historical Data.csv', usecols=["Date","Price","Open","High"])
 
+
+
 # Setting index as dates
 raw_data['Date'] = pd.to_datetime(raw_data.Date, format='%b %d, %Y')
 raw_data.index = raw_data['Date']
