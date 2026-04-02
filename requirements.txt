@@ -17,7 +17,7 @@ Keras==3.13.1
 Keras-Preprocessing==1.1.2
 kiwisolver==1.2.0
 lxml==4.6.3
-Markdown==3.2.2
+Markdown==3.8.1
 matplotlib==3.3.2
 mplcursors==0.3
 multitasking==0.0.9
